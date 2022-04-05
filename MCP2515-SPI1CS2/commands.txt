@@ -1,0 +1,11 @@
+1. Copy file to /home/rpi/
+2. dtc -I dts -O dtb -o mcp2515-can2.dtbo mcp2515-can2-overlay.dts
+3. sudo cp /home/pi/mcp2515-can2.dtbo /boot/overlays/
+4. sudo nano /boot/config.txt
+5. add to end
+	dtoverlay=spi1-3cs
+	dtoverlay=mcp2515-can2,oscillator=8000000,interrupt=25,spimaxfrequency=2000000
+6. sudo reboot
+7. enjoy :)
+
+	
